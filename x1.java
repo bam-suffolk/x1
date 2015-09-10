@@ -26,6 +26,10 @@ void draw() {
   fill( 100,200,100 );
   rect( 0,horizon, width,height*3/4 );      // grass.
   
+  triangle(550,150,600,150,575,100);
+  fill(139,80,13);
+  rect(568,150,15,25);
+  
   /* INSERT YOUR CODE HERE! */
   fill(255,0,0);
   rect( 150,horizon, 120,horizon-50);  // house
