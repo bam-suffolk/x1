@@ -1,5 +1,5 @@
 //Making a Scene
-//Drake P  9/9/15
+//Drake P  9/9/15 CST 112
 
 /// GLOBALS:  coordinates, speed, etc.
 float x, y;       // Position of creature.
@@ -13,8 +13,10 @@ void setup() {
   horizon=  height/4;
   x=  width/2;
   y=  height/2;
-  dx=  3;
-  dy=  2;
+  //--dx=  3;  too fast
+  //--dy=  2;
+  dx=  1;
+  dy=  .66;
   /// start sun
   sunX=width*3/4;
   sunY=height/8;
@@ -29,7 +31,7 @@ void draw() {
   sunX= (sunX+1) % (width+150);
  
   ellipse( sunX,sunY, 40,40 );    // sun
-  // Grass
+  
   fill( 100,200,100 );
   rect( 0,horizon, width,height*3/4 );      // grass.
   
@@ -37,7 +39,7 @@ void draw() {
   fill(139,80,13);
   rect(568,150,15,25);
   
-  /* INSERT YOUR CODE HERE! */
+  
   fill(255,0,0);
   rect( 150,horizon, 120,horizon-50);  // house
   fill(139,80,13);
@@ -56,13 +58,11 @@ void draw() {
   x=  x + dx;
   y=  y + dy;
   
-  //// SHOW:  display the creature at (x,y)
-
-  /* INSERT YOUR CODE HERE! */
+  
   fill(50,80,150); 
   rect( x,y, 30,50 );
   fill(255,0,0);
-  ellipse(x+15,y-11,20,20);  /* REPLACE THIS WITH YOUR OWN CODE! */
+  ellipse(x+15,y-11,20,20);  
   fill(255,255,0);
   stroke(255,255,0);          //Puppet Sting//
   line(x+15,y-11,350,80);  
