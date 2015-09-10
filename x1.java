@@ -44,10 +44,18 @@ void draw() {
   fill(255,255,255); rect( x,y, 80,50 );  /* REPLACE THIS WITH YOUR OWN CODE! */
   rect(x, y+50, 10, 40);
   rect (x+70, y+50, 10,40);
+  rect (x+70,y-30, 20, 30);
+  ellipse(x+100, y-30, 60,30);
+  triangle(x+100, y-40, 5,5,5);
+  
+  
+ 
   fill (0); ellipse(x+10,y+10, 20,10);
  fill (0); ellipse(x+20, y+40, 20, 10);
  fill (0); ellipse (x+60, y+20, 20, 10);
-  text( "cow", x,y );
+ ellipse(x+90, y-25, 10,5);
+ ellipse (x+110, y-40, 7,5);
+  text( "cow", x+40,y+40 );
 
 }
 
