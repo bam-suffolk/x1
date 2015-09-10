@@ -62,7 +62,7 @@ void draw() {
   ellipse(x+15,y-11,20,20);  /* REPLACE THIS WITH YOUR OWN CODE! */
   fill(255,255,0);
   stroke(255,255,0);          //Puppet Sting//
-  line(x+15,y-11,350,40);  
+  line(x+15,y-11,350,80);  
   stroke(0);
   fill(255);
   text( "Jimmy", x,y+30 );
