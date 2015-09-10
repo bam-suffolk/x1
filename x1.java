@@ -26,8 +26,8 @@ void draw() {
   //// SCENE:  sky, sun, tree, house, etc.
   background( 100,200,250 );                // sky
   fill( 255,255,0 );
-  sunX= (sunX-1);
-  sunY= (sunY-.2);
+  sunX= (sunX+1) % (width+150);
+ 
   ellipse( sunX,sunY, 40,40 );    // sun
   // Grass
   fill( 100,200,100 );
@@ -44,6 +44,9 @@ void draw() {
   rect(230,250,25,50);
   fill(0);
   triangle(150,horizon,271,horizon,210,90);
+  fill(255);
+  rect(165,200,30,30);
+  rect(225,200,30,30);
                                       
 
   fill(0);
