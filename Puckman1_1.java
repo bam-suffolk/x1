@@ -23,16 +23,23 @@ void setup() {
 //// NEXT FRAME:  scene, action, show.
 void draw() {
   //// SCENE:  sky, sun, tree, house, etc.
-  background( 100,150,200 );                // sky
+  background( 100, 150, 200);                // sky
   fill( 255,255,0 );
-  ellipse( width*3/4, height/8, 40,40 );    // sun
+  ellipse( width*3/4, height/8, 40, 40);    // sun
   
-  fill( 100,200,100 );
-  rect( 0,horizon, width,height*3/4 );      // grass.
+  fill( 100, 200, 100);
+  stroke( 100, 200, 100);
+  rect( 0, horizon, width, height*3/4);      // grass.
   
-  /* INSERT YOUR CODE HERE! */
-  triangle( 150,horizon, 120,horizon-50, 180,horizon-50  );  // tree
-  text( "This is NOT a good tree; please fix it!", 150,horizon );
+  triangle( 150, horizon-25, 120, horizon-75, 180, horizon-75);  // tree
+  stroke( 139, 69, 19); fill( 139, 69, 19);  //I think it should be stated that I found the brown for my bark from google
+  rect( 140, horizon-50, 20, 50);
+  
+  stroke(0); fill(0);
+  ellipse( 145, horizon-70, 2, 2);              //Tree Smile :D
+  ellipse( 155, horizon-70, 2, 2);
+  arc(150, horizon-64 , 10, 10, 0, PI, CHORD);
+  text( "Don't let him talk to you like that! You are a beautiful tree!", 10, horizon-80 );
     
   fill(255, 0, 150); rect( width/2-20, horizon-40, 40, 40);              // house
   fill(255, 0, 50);  triangle( width/2, horizon-60, width/2-30, horizon-40, width/2+30, horizon-40);
@@ -59,7 +66,7 @@ void draw() {
   text( "AHH!", x+25, y );
   fill(255,200,0); arc(x, y, 80, 80, QUARTER_PI, TWO_PI-QUARTER_PI , PIE);    //Puckman Shape
   fill(255,255,255);               //White for Teeth and Eye
-  line(x, y-30, x+10, y-20);       //Puckman Mad Line
+  line(x, y-30, x+10, y-20);       //Puckman Eyebrow Line
 
   text( "Created By David Marques", width-150, height-10);
   
