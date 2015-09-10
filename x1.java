@@ -19,15 +19,15 @@ void setup() {
 //// NEXT FRAME:  scene, action, show.
 void draw() {
   //// SCENE:  sky, sun, tree, house, etc.
-  background( 100,150,200 );                // sky
-  fill( 255,255,0 );
+  background( 50,50,200 );                // sky
+  fill( 250 );
   ellipse( width*1/2, height/3, 100,100 );    // sun
   // Grass
   fill( 100,200,100 );
   rect( 0,horizon, width,height*3/4 );      // grass.
   
   /* INSERT YOUR CODE HERE! */
-  triangle( 150,horizon, 120,horizon-50, 180,horizon-50  );  // tree
+  triangle( 50,horizon, 65,horizon-80, 80,horizon  );  // tree
   text( "This is NOT a good tree; please fix it!", 150,horizon );
                                             // house
 
@@ -48,6 +48,7 @@ void draw() {
   ellipse(x+100, y-30, 60,30);
   triangle(x+90, y-45, x+105,y-55,x+110,y-45);
   triangle(x+70, y-40, x+85,y-50, x+90, y-40);
+ 
   
   
  
@@ -57,7 +58,10 @@ void draw() {
  ellipse(x+90, y-25, 10,5);
  ellipse (x+110, y-40, 7,5);
  line(x,y, x-20, y+50);
+ triangle(500,200, 550,150, 600, 200); 
   text( "cow", x+40,y+40 );
+  fill (255,0,0);
+   rect(500,200, 100,50); 
 
 }
 
@@ -67,8 +71,8 @@ void mousePressed() {
   x=  mouseX;                             // Set (x,y) to mouse
   y=  mouseY;
   //
-  dx=  random( +6 );                  // random speed.
-  dy=  random( -5 );
+  dx=  random( +5 );                  // random speed.
+  dy=  random( -10 );
 }
 
 void keyPressed() {
@@ -76,4 +80,3 @@ void keyPressed() {
     exit();                           // press 'q' key to QUIT.
   }
 }
-   
