@@ -27,10 +27,10 @@ void draw() {
   rect( 0,horizon, width,height*3/4 );      // grass.
   
   /* INSERT YOUR CODE HERE! */
-  fill(230);
+  fill(255,0,0);
   rect( 150,horizon, 120,horizon-50);  // house
-  triangle(50,20,20,20,20,20);
-  
+  fill(0);
+  triangle(150,horizon,271,horizon,210,90);
                                       
 
   fill(0);
@@ -47,6 +47,7 @@ void draw() {
   rect( x,y, 30,50 );
   fill(255,0,0);
   ellipse(x+15,y-11,20,20);  /* REPLACE THIS WITH YOUR OWN CODE! */
+  fill(0,255,255);
   triangle(x+15,y-11,20,20,20,20);
   fill(255);
   text( "Jimmy", x,y+30 );
