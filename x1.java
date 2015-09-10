@@ -46,7 +46,8 @@ void draw() {
   rect (x+70, y+50, 10,40);
   rect (x+70,y-30, 20, 30);
   ellipse(x+100, y-30, 60,30);
-  triangle(x+100, y-40, 5,5,5);
+  triangle(x+90, y-45, x+105,y-55,x+110,y-45);
+  triangle(x+70, y-40, x+85,y-50, x+90, y-40);
   
   
  
@@ -55,6 +56,7 @@ void draw() {
  fill (0); ellipse (x+60, y+20, 20, 10);
  ellipse(x+90, y-25, 10,5);
  ellipse (x+110, y-40, 7,5);
+ line(x,y, x-20, y+50);
   text( "cow", x+40,y+40 );
 
 }
