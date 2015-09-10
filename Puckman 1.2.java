@@ -45,10 +45,7 @@ void draw() {
   fill(255, 0, 50);  triangle( width/2, horizon-60, width/2-30, horizon-40, width/2+30, horizon-40);
 
 
-  fill(0);
-  text( "My name is Puckman, I live an evil life.", 10,height-20 );                                          
-                                            
-  //// ACTION:  move (x,y) coordinates.
+  fill(0);text( "My name is Puckman, I live an evil life.", 10,height-20 );                                          
   
   if( x > width || x < 0){
     dx *= -1;                  //making left and right borders invert x direction
@@ -57,42 +54,23 @@ void draw() {
     dy *= -1;
   }
   
-  x=  x + dx;
-  y=  y + dy;
-  
-  //// SHOW:  display the creature at (x,y)
+  x=  x + dx;    // ACTION:  move (x,y) coordinates.
+  y=  y + dy;    
 
-  /* INSERT YOUR CODE HERE! */
   text( "AHH!", x+25, y );
+  text( "Puckman", x-30, y-45);
   fill(255,200,0); arc(x, y, 80, 80, QUARTER_PI, TWO_PI-QUARTER_PI , PIE);    //Puckman Shape
   fill(255,255,255);               //White for Teeth and Eye
   line(x, y-30, x+10, y-20);       //Puckman Eyebrow Line
 
   text( "Created By David Marques", width-150, height-10);
   
-  stroke(255, 0, 0);               //makes Teeth and Eye red
-  beginShape(TRIANGLES);           //Begin Teeth
-  vertex(x,    y    );
-  vertex(x+5,  y-5  );             //1st Tooth
-  vertex(x+5,  y    );
-  
-  vertex(x+5,  y+5  );
-  vertex(x+10, y+10 );             //2nd Tooth
-  vertex(x+10, y+5  );
-  
-  vertex(x+10, y-10 );
-  vertex(x+15, y-15 );             //3rd Tooth
-  vertex(x+15, y-10 );
-  
-  vertex(x+15, y+15 );
-  vertex(x+20, y+20 );             //4th Tooth
-  vertex(x+20, y+15 );
-   
-  vertex(x+20, y-20 );
-  vertex(x+25, y-25 );             //5th Tooth
-  vertex(x+25, y-20 );
-                                   //why so many teeth? Good Question! I'll change them to triangle(); eventually
-  endShape();                      //End Tooth Shape
+  stroke(255, 0, 0);               //makes Teeth and Eye red           
+  triangle(x, y, x+5, y-5, x+5, y);
+  triangle(x+5, y+5, x+10, y+10, x+10, y+5);                    
+  triangle(x+10, y-10, x+15, y-15, x+15, y-10);    //Teeth
+  triangle(x+15, y+15, x+20, y+20, x+20, y+15);    
+  triangle(x+20, y-20, x+25, y-25, x+25, y-20);    
   
   ellipse(x, y-20, 10, 10);        //Puckman Eye
   point(x+3, y-20);                //Puckman Eye Pupil
