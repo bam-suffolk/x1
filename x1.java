@@ -57,10 +57,10 @@ void draw() {
   //// SHOW:  display the creature at (x,y)
 
   /* INSERT YOUR CODE HERE! */
-  //fill(255,0,0); rect( x,y, 30,50 );        /* REPLACE THIS WITH YOUR OWN CODE! */
+  //fill(255,0,0); rect( x,y, 30,50 );        
   //text( "Fred", x,y );
   fill(277,181,200);                         // CREATURE "MILI"
-  //ellipseMode(CENTER);                     // WHY IF I ACTIVATE THIS, IT THE GRASS, HORIZON AND HOUSE GETS MISPLACED. 
+  //ellipseMode(CENTER);                     // WHY IF I ACTIVATE THIS, THE GRASS, HORIZON AND HOUSE GETS MISPLACED. 
   ellipse(x,y-45,40,40);
   fill(0);
   ellipse(x-10,y-50,10,7);
