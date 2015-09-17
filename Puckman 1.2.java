@@ -14,8 +14,8 @@ float horizon;
 void setup() {
   size( 640,480);
   horizon=  height/4;
-  x=  width/2;
-  y=  height/2;
+  x=  0;
+  y=  0;
   dx=  3;
   dy=  2;
 }
@@ -56,24 +56,25 @@ void draw() {
   
   x=  x + dx;    // ACTION:  move (x,y) coordinates.
   y=  y + dy;    
-
-  text( "AHH!", x+25, y );
-  text( "Puckman", x-30, y-45);
-  fill(255,200,0); arc(x, y, 80, 80, QUARTER_PI, TWO_PI-QUARTER_PI , PIE);    //Puckman Shape
+  translate(x,y);
+  rotate( atan2( mouseY-y,mouseX-x));
+  text( "AHH!", 25, 0 );
+  text( "Puckman", -30, -45);
+  fill(255,200,0); arc(0, 0, 80, 80, QUARTER_PI, TWO_PI-QUARTER_PI , PIE);    //Puckman Shape
   fill(255,255,255);               //White for Teeth and Eye
-  line(x, y-30, x+10, y-20);       //Puckman Eyebrow Line
+  line(0, -30, 10, -20);       //Puckman Eyebrow Line
 
   text( "Created By David Marques", width-150, height-10);
   
   stroke(255, 0, 0);               //makes Teeth and Eye red           
-  triangle(x, y, x+5, y-5, x+5, y);
-  triangle(x+5, y+5, x+10, y+10, x+10, y+5);                    
-  triangle(x+10, y-10, x+15, y-15, x+15, y-10);    //Teeth
-  triangle(x+15, y+15, x+20, y+20, x+20, y+15);    
-  triangle(x+20, y-20, x+25, y-25, x+25, y-20);    
+  triangle(0, 0, 5, -5, 5, 0);
+  triangle(5, 5, 10, 10, 10, 5);                    
+  triangle(10, -10, 15, -15, 15, -10);    //Teeth
+  triangle(15, 15, 20, 20, 20, 15);    
+  triangle(20, -20, 25, -25, 25, -20);    
   
-  ellipse(x, y-20, 10, 10);        //Puckman Eye
-  point(x+3, y-20);                //Puckman Eye Pupil
+  ellipse(0, -20, 10, 10);        //Puckman Eye
+  point(3, -20);                //Puckman Eye Pupil
   
   stroke(0);                       //makes stroke color black again
 
