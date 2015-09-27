@@ -1,0 +1,136 @@
+//////// Rebeca Janowicz?  (CST 112; Wednesday, September 16);
+
+String author=  "My name is Rebeca";
+String title=  "Exercise #2:  Millie gets around!";
+
+//// GLOBALS:  coordinates, speed, etc.
+float x, y;                                                                        // Position of creature.
+float dx, dy;                                                                      // Speed.
+float horizon;
+float circleX = 0;
+float circleY = 0;
+float circleW = 50;
+float circleH = 100;
+float circleFill = 0;
+float cr=255, cg=200, cb=0;
+
+float backgroundColor = 255;
+float change = .5;
+
+
+//// SETUP:  window size, initialization (start in middle of screen).
+
+void setup() {
+  size( 640,480);
+  horizon=  height/4;
+  x=  width/2;
+  y=  height/2;
+  frameRate(30);
+  dx=  3;
+  dy=  2;
+}
+
+//// NEXT FRAME:  scene, action, show.
+void draw() {
+  
+ // sky                                                          
+   background( 100,150,200 );                    
+ 
+
+//Sun
+
+  fill( cr, cg, cb );           
+  noStroke();
+  ellipse(circleX, circleY, circleW+10, circleH-10);
+  circleX = circleX + change + 1 ;
+  circleY = circleY + change;
+  circleW = circleW + change;
+  circleH = circleH + change;
+  circleFill = circleFill + change;
+ 
+  
+  // Grass
+  fill( 100,200,100 );
+  rect( 0,horizon+10, width,height*3/4 );      
+  
+// Tree
+  stroke(0);
+  fill(66,139,18);                            
+  triangle(30, 75, 58, 20, 86, 75);           
+  triangle(30, 120, 58, 70, 86, 120);        
+  fill(98,86,56);
+  rect(55,120,10,20);                      
+  
+  //House
+  stroke(0);
+  fill(167,161,98);                   
+  rect(50,300,150,125);                              // house
+  fill(77,66,67);
+  triangle(50, 300, 125, 175, 200, 300);             //roof
+  fill(160,10,20); 
+  rect(90,190,20,60);                                //cheminee
+  fill(255);
+  rect(65,310,30,50);                               //windows
+  rect(155,310,30,50);                              //windows
+  fill(75,71,57);
+  rect(105,370,30,55);                             //door
+  fill(0);
+                                       
+                                                        
+  //// ACTION:  move (x,y) coordinates.
+  
+  x=  x + dx;
+  y=  y + dy;
+  
+  //// SHOW:  display the creature at (x,y)
+   // CREATURE MILLIE
+  
+  fill(277,181,200);                         // head color             
+  ellipseMode(CENTER);                      
+  ellipse(x,y-45,50,80);                     //head
+  fill(0);
+  ellipse(x-15,y-50,10,10);                  //Right eye
+  ellipse(x+15,y-50,10,10);                  //Left eye
+  ellipse(x,y-40,7,7);                       //nose
+  fill(255,0,0);                             //mouth color
+  ellipse(x,y-25,15,5);                      //mouth
+  
+  fill(88,53,165);                          //body
+  rect( x-25,y-5, 50,100 );  
+  
+  strokeWeight(5);                          //feet
+  stroke(0);
+  line(x-50,y+95,x+50,y+95);  
+
+  float shoulder=  y-30;
+  fill(0);
+  line(x-25,shoulder+25, x-50, y+10);    
+  line(x+25,shoulder+25, x+50,y+10);  
+  strokeWeight(1);
+  
+  text( "MILLIE", x-15,y+50 );                  //END OF CREATURE "MILI"
+ 
+  // My name 
+ text( author, 10,height-20 );                                          
+ text( title, width/3,20 );
+}
+
+//////// HANDLERS:  mouse clicks, keys
+void mousePressed() {
+  x=  mouseX;                             // Set (x,y) to mouse
+  y=  mouseY;
+  //
+   
+  dx=  random( -6, +6 );                  // random speed.
+  dy=  random( -4, +4 );
+}
+
+void keyPressed() {
+  if (key == 'q') {
+    exit();                           // press 'q' key to QUIT.
+  }
+  if (key == 'r') { cr=255; cg=100; cb=0; }
+  if (key == 'y') { cr=255; cg=255; cb=0; }
+  if (key == 'b') { cr=100; cg=150; cb=200; }
+}
+   
