@@ -4,21 +4,22 @@ String author=  "My name is Rebeca";
 String title=  "Exercise #2:  Millie gets around!";
 
 //// GLOBALS:  coordinates, speed, etc.
-float x, y;       // Position of creature.
-float dx, dy;     // Speed.
+float x, y;                                                                        // Position of creature.
+float dx, dy;                                                                      // Speed.
 float horizon;
 float circleX = 0;
 float circleY = 0;
 float circleW = 50;
 float circleH = 100;
-float circleStroke = 255;
 float circleFill = 0;
 float cr=255, cg=200, cb=0;
 
 float backgroundColor = 255;
-float change = 0.5;
+float change = .5;
+
 
 //// SETUP:  window size, initialization (start in middle of screen).
+
 void setup() {
   size( 640,480);
   horizon=  height/4;
@@ -31,90 +32,88 @@ void setup() {
 
 //// NEXT FRAME:  scene, action, show.
 void draw() {
-  //// SCENE:  sky, sun, tree, house, etc.
-  background( 100,150,200 );                // sky
-  fill( 255,255,0 );
-  //ellipse( width*3/4, height/8, 40,40 );    // sun > trying a sunset but having a hard time with color
-  stroke(circleStroke);
-  //--  fill(circleFill);
-  fill( cr, cg, cb );
-  ellipse(circleX, circleY, circleW, circleH);
   
-  //change the valuse of all variable
-  circleX = circleX + change;
+ // sky                                                          
+   background( 100,150,200 );                    
+ 
+
+//Sun
+
+  fill( cr, cg, cb );           
+  noStroke();
+  ellipse(circleX, circleY, circleW+10, circleH-10);
+  circleX = circleX + change + 1 ;
   circleY = circleY + change;
   circleW = circleW + change;
   circleH = circleH + change;
-  circleStroke = circleStroke + change;
   circleFill = circleFill + change;
+ 
+  
   // Grass
   fill( 100,200,100 );
-  rect( 0,horizon+10, width,height*3/4 );      // grass.
+  rect( 0,horizon+10, width,height*3/4 );      
   
-  /* INSERT YOUR CODE HERE! */
-  fill(66,139,18);                            //ADD
-  triangle(30, 75, 58, 20, 86, 75);           //ADD
-  triangle(30, 120, 58, 70, 86, 120);        //ADD
-
+// Tree
+  stroke(0);
+  fill(66,139,18);                            
+  triangle(30, 75, 58, 20, 86, 75);           
+  triangle(30, 120, 58, 70, 86, 120);        
   fill(98,86,56);
-  rect(55,120,10,20);                      // this is my tree
+  rect(55,120,10,20);                      
   
-
+  //House
   stroke(0);
   fill(167,161,98);                   
-  rect(50,300,150,125);                       // house
+  rect(50,300,150,125);                              // house
   fill(77,66,67);
-  triangle(50, 300, 125, 175, 200, 300);     //roof
-  fill(160,10,20);
-  rect(100,200,10,20);                      //cheminee
+  triangle(50, 300, 125, 175, 200, 300);             //roof
+  fill(160,10,20); 
+  rect(90,190,20,60);                                //cheminee
   fill(255);
-  rect(65,310,30,50);                      //windows
-  rect(155,310,30,50);                    //windows
+  rect(65,310,30,50);                               //windows
+  rect(155,310,30,50);                              //windows
   fill(75,71,57);
-  rect(105,370,30,55);                    //door
+  rect(105,370,30,55);                             //door
   fill(0);
-  //--  text( "My name is Rebeca", 10,height-20 );                                          
-  text( author, 10,height-20 );                                          
-  text( title, width/3,20 );
-               
-                                            
+                                       
+                                                        
   //// ACTION:  move (x,y) coordinates.
+  
   x=  x + dx;
   y=  y + dy;
   
   //// SHOW:  display the creature at (x,y)
-
-  /* INSERT YOUR CODE HERE! */
-  //fill(255,0,0); rect( x,y, 30,50 );        /* REPLACE THIS WITH YOUR OWN CODE! */
-  //text( "Fred", x,y );
-  fill(277,181,200);                         // CREATURE "MILI"
-  //ellipseMode(CENTER);                     // WHY IF I ACTIVATE THIS, IT THE GRASS, HORIZON AND HOUSE GETS MISPLACED. 
-  ellipse(x,y-45,40,40);
+   // CREATURE MILLIE
+  
+  fill(277,181,200);                         // head color             
+  ellipseMode(CENTER);                      
+  ellipse(x,y-45,50,80);                     //head
   fill(0);
-  ellipse(x-10,y-50,10,7);
-  ellipse(x+10,y-50,10,7);
-  ellipse(x+2,y-40,5,5);
-  fill(88,53,165);
- // rectMode(CENTER);              ?????
-  rect( x-10,y-25, 20,50 );                    /* REPLACE THIS WITH YOUR OWN CODE! */
+  ellipse(x-15,y-50,10,10);                  //Right eye
+  ellipse(x+15,y-50,10,10);                  //Left eye
+  ellipse(x,y-40,7,7);                       //nose
+  fill(255,0,0);                             //mouth color
+  ellipse(x,y-25,15,5);                      //mouth
+  
+  fill(88,53,165);                          //body
+  rect( x-25,y-5, 50,100 );  
+  
+  strokeWeight(5);                          //feet
+  stroke(0);
+  line(x-50,y+95,x+50,y+95);  
+
+  float shoulder=  y-30;
   fill(0);
-
-  strokeWeight(5);
-  stroke(255);
-  line(x-30,y+25,x+30,y+25);  //  feet
-
-  float shoulder=  y-20;
-//--  line(x-10,y-10,200,175);    //??
-//--  line(x+10,y-10,400,175);   // ??
-  line(x-10,shoulder, x-35, y-70);    //??
-  line(x+10,shoulder, x+35,y-70);   // ??
+  line(x-25,shoulder+25, x-50, y+10);    
+  line(x+25,shoulder+25, x+50,y+10);  
   strokeWeight(1);
   
-  fill(245,32,75);
-  text( "MILI", x-10,y+50 );                  //END OF CREATURE "MILI"
+  text( "MILLIE", x-15,y+50 );                  //END OF CREATURE "MILI"
+ 
+  // My name 
+ text( author, 10,height-20 );                                          
+ text( title, width/3,20 );
 }
-
-
 
 //////// HANDLERS:  mouse clicks, keys
 void mousePressed() {
