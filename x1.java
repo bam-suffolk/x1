@@ -1,48 +1,74 @@
-//////// What am I trying to do???
-//////// What is my name?  (CST 112; today's date?)
+//Making a Scene
+//Drake P  9/9/15 CST 112
 
-//// GLOBALS:  coordinates, speed, etc.
+/// GLOBALS:  coordinates, speed, etc.
 float x, y;       // Position of creature.
 float dx, dy;     // Speed.
 float horizon;
+float sunX, sunY;
 
 //// SETUP:  window size, initialization (start in middle of screen).
 void setup() {
-  size( 640,480);
+  size( 700,700);
   horizon=  height/4;
   x=  width/2;
   y=  height/2;
-  dx=  3;
-  dy=  2;
+  //--dx=  3;  too fast
+  //--dy=  2;
+  dx=  1;
+  dy=  .66;
+  /// start sun
+  sunX=width*3/4;
+  sunY=height/8;
+  
 }
 
 //// NEXT FRAME:  scene, action, show.
 void draw() {
   //// SCENE:  sky, sun, tree, house, etc.
-  background( 100,150,200 );                // sky
+  background( 100,200,250 );                // sky
   fill( 255,255,0 );
-  ellipse( width*3/4, height/8, 40,40 );    // sun
-  // Grass
+  sunX= (sunX+1) % (width+150);
+ 
+  ellipse( sunX,sunY, 40,40 );    // sun
+  
   fill( 100,200,100 );
   rect( 0,horizon, width,height*3/4 );      // grass.
   
-  /* INSERT YOUR CODE HERE! */
-  triangle( 150,horizon, 120,horizon-50, 180,horizon-50  );  // tree
-  text( "This is NOT a good tree; please fix it!", 150,horizon );
-                                            // house
+  triangle(550,150,600,150,575,100);
+  fill(139,80,13);
+  rect(568,150,15,25);
+  
+  
+  fill(255,0,0);
+  rect( 150,horizon, 120,horizon-50);  // house
+  fill(139,80,13);
+  rect(230,250,25,50);
+  fill(0);
+  triangle(150,horizon,271,horizon,210,90);
+  fill(255);
+  rect(165,200,30,30);
+  rect(225,200,30,30);
+                                      
 
   fill(0);
-  text( "My name is Mud", 10,height-20 );                                          
+  text( "My name is Drake", 10,height-20 );                                          
                                             
   //// ACTION:  move (x,y) coordinates.
   x=  x + dx;
   y=  y + dy;
   
-  //// SHOW:  display the creature at (x,y)
-
-  /* INSERT YOUR CODE HERE! */
-  fill(255,0,0); rect( x,y, 30,50 );        /* REPLACE THIS WITH YOUR OWN CODE! */
-  text( "Fred", x,y );
+  
+  fill(50,80,150); 
+  rect( x,y, 30,50 );
+  fill(255,0,0);
+  ellipse(x+15,y-11,20,20);  
+  fill(255,255,0);
+  stroke(255,255,0);          //Puppet Sting//
+  line(x+15,y-11,350,80);  
+  stroke(0);
+  fill(255);
+  text( "Jimmy", x,y+30 );
 
 }
 
@@ -62,5 +88,3 @@ void keyPressed() {
   }
 }
    
-   
-
