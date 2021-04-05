@@ -1,7 +1,7 @@
 # x1:  Lights, Camera, Action !
 Create a scene plus some action for your creature.
 
-SCENE:  Design a "scene" with sky, sun, grass, and a few other features such as a tree and a house.
+SCENE:    Design a "scene" with sky, sun, grass, and a few other features such as a tree and a house.
 
 CREATURE:  
 * Design your own "creature" (and give it a better name than "Zoog").
